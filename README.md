@@ -20,4 +20,6 @@ int is_id_start_u(char c);
 int is_valid_id_u(char c);
 // allocates (end - start + 1) bytes and copies the source string into the buffer and zero terminates it
 char *cpy_str_u(char *start, char *end);
+// seeks the length of the file and allocates enough space to load the entire file into
+char *load_file(char *fname);
 ```

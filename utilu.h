@@ -9,3 +9,4 @@ int get_hexnum_u(char c);
 int is_id_start_u(char c);
 int is_valid_id_u(char c);
 char *cpy_str_u(char *start, char *end);
+char *load_file(char *fname);

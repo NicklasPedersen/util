@@ -60,3 +60,27 @@ char *cpy_str_u(char *start, char *end) {
     c[len] = '\0';
     return c;
 }
+
+#include <stdio.h>
+// load entire file from filename
+char *load_file(char *fname) {
+    char *buffer = 0;
+    long length;
+    FILE *f = fopen(fname, "r");
+    if (!f) {
+        printf("err no file \"%s\"", fname);
+        return NULL;
+    }
+    fseek(f, 0, SEEK_END);
+    length = ftell(f);
+    fseek(f, 0, SEEK_SET);
+    buffer = malloc(length + 1);
+    if (!buffer) {
+        fclose(f);
+        return NULL;
+    }
+    fread(buffer, 1, length, f);
+    buffer[length] = '\0';
+    fclose(f);
+    return buffer;
+}

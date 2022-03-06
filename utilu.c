@@ -27,9 +27,9 @@ int get_hexnum_u(char c) {
         return c - '0';
     }
     if ('a' <= c && c <= 'f') {
-        return c - 'a';
+        return c - 'a' + 10;
     }
-    return c - 'A';
+    return c - 'A' + 10;
 }
 
 // is it an alpha or a num character?

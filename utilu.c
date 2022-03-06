@@ -16,6 +16,22 @@ int is_num_u(char c) {
     return '0' <= c && c <= '9';
 }
 
+// is it a hexedecimal character? (0-9a-fA-F)
+int is_hexnum_u(char c) {
+    return is_num_u(c) || ('a' <= c && c <= 'f') || ('A' <= c && c <= 'F');
+}
+
+// get an integer from a hexedecimal character? (0-9) -> (0-9), (a-f or A-F) -> (10-15)
+int get_hexnum_u(char c) {
+    if (is_num_u(c)) {
+        return c - '0';
+    }
+    if ('a' <= c && c <= 'f') {
+        return c - 'a';
+    }
+    return c - 'A';
+}
+
 // is it an alpha or a num character?
 int is_alnum_u(char c) {
     return is_alpha_u(c) || is_num_u(c);

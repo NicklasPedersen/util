@@ -8,6 +8,10 @@ int is_ws_u(char c);
 int is_alpha_u(char c);
 // is used for determining whether or not the character is a numeric character
 int is_num_u(char c);
+// is used for determining whether or not the character is a hexadecimal character
+int is_hexnum_u(char c)
+// is used for converting a hexadecimal character to an integer (0-15)
+int get_hexnum_u(char c);
 // is used for determining whether or not the character is an alphanumeric character
 int is_alnum_u(char c);
 // is used for determining whether or not the character is a valid start-of-identifier character [_a-zA-Z]
